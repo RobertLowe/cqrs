@@ -13,10 +13,10 @@ import { ExplorerService } from './services/explorer.service';
 export class CqrsModule<EventBase extends IEvent = IEvent>
   implements OnApplicationBootstrap {
   constructor(
-    private readonly explorerService: ExplorerService<EventBase>,
-    private readonly eventsBus: EventBus<EventBase>,
-    private readonly commandsBus: CommandBus,
-    private readonly queryBus: QueryBus,
+    protected readonly explorerService: ExplorerService<EventBase>,
+    protected readonly eventsBus: EventBus<EventBase>,
+    protected readonly commandsBus: CommandBus,
+    protected readonly queryBus: QueryBus,
   ) {}
 
   onApplicationBootstrap() {
